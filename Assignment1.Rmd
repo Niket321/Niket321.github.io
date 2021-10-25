@@ -1,0 +1,32 @@
+---
+title: "Developing Data Products Assignment"
+author: "Niket Jain"
+date: "10/25/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Leaflet Map
+
+This is a map showing where I was born, where I stay and where I study.
+
+```{r}
+library("leaflet")
+leaflet() %>% addTiles() %>% setView(80.668889, 12.922822, 6) %>%
+  addMarkers(
+    lat = 12.972442 , lng = 77.580643,
+    label = "Bangalore: Place of Residence",
+    labelOptions = labelOptions(noHide = T)) %>%
+  addMarkers(
+    lat = 24.756807, lng = 78.839264,
+    label = "Tikamgarh: Place of Birth",
+    labelOptions = labelOptions(noHide = T)) %>%
+  addMarkers(
+    lat = 13.352459, lng = 74.792693,
+    label = "Manipal Institute of Technology: My college",
+    labelOptions = labelOptions(noHide = T)) 
+
+```
